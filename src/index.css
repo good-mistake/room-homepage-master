@@ -1,0 +1,408 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap");
+body {
+  margin: 0;
+  font-family: "League Spartan", sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+main {
+  display: flex;
+  height: 600px;
+}
+nav {
+  background-image: url(./images/desktop-image-hero-1.jpg);
+  width: 70%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+ul {
+  margin: 3rem 0 0 0;
+  padding: 0;
+  display: flex;
+  width: 55%;
+  list-style: none;
+  align-items: baseline;
+  justify-content: space-evenly;
+  color: white;
+}
+li {
+  text-transform: lowercase;
+  position: relative;
+  font-size: 1.25rem;
+}
+ul li:nth-child(1) {
+  font-size: 2.25rem;
+  margin-right: 1rem;
+}
+ul li:not(:first-child):hover {
+  cursor: pointer;
+}
+ul li:not(:first-child)::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  width: 100%;
+  height: 2px;
+  background: rgb(255, 255, 255);
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease-out;
+}
+ul li:not(:first-child):hover::after {
+  transform: translateX(-50%) scaleX(0.75);
+}
+article {
+  width: 50%;
+  text-align: left;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+article h2 {
+  color: #2b2b2b;
+  font-size: 2.5rem;
+  line-height: 2.75rem;
+  margin: 0;
+}
+article p {
+  color: #a8a8a8;
+  line-height: 1.5rem;
+  font-size: 1rem;
+}
+article > section > div {
+  width: 80%;
+}
+article section {
+  padding: 2rem;
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+.slider {
+  display: flex;
+  align-self: flex-start;
+}
+.slider div {
+  background-color: black;
+  margin-top: 1rem;
+  padding: 1.75rem 2.25rem;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+}
+.btn {
+  cursor: pointer;
+  letter-spacing: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+  transition: color 0.3s ease, letter-spacing 0.3s ease;
+}
+.btn:hover {
+  color: #a1a1a1;
+  letter-spacing: 1rem;
+}
+.btn svg {
+  margin-left: 1rem;
+  transition: fill 0.3s ease, transform 0.3s ease;
+}
+.btn:hover .hovering {
+  fill: #a1a1a1;
+  transform: scale(1);
+}
+.slider div:hover {
+  background-color: #444444;
+}
+footer {
+  display: flex;
+  height: 280px;
+}
+footer > div:nth-child(1),
+footer > div:nth-child(3) {
+  width: 30%;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+footer > div:nth-child(2) {
+  width: 35%;
+  display: flex;
+  justify-content: center;
+  text-align: left;
+  flex-direction: column;
+  padding: 1.5rem 2.25rem 0 2.25rem;
+  color: #a8a8a8;
+}
+footer > div:nth-child(2) p {
+  margin: 0;
+  line-height: 1.5rem;
+  font-size: 1rem;
+}
+footer > div:nth-child(2) h3 {
+  margin: 0;
+  margin-bottom: 1rem;
+
+  color: #2b2b2b;
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing: 7px;
+  text-transform: uppercase;
+}
+footer > div:nth-child(1) {
+  background-image: url("./images/image-about-dark.jpg");
+}
+footer > div:nth-child(3) {
+  background-image: url("./images/image-about-light.jpg");
+}
+.menu {
+  display: none;
+  margin: 3rem 0rem 0 2rem;
+  width: 50%;
+}
+.overlay {
+  display: none;
+}
+@media (max-width: 1150px) {
+  main {
+    height: 500px;
+  }
+  ul {
+    width: 75%;
+  }
+  footer {
+    height: 220px;
+  }
+  footer > div:nth-child(2) p {
+    line-height: 1.25rem;
+  }
+  article section {
+    margin-bottom: 0.25rem;
+  }
+  article h2 {
+    color: #2b2b2b;
+    font-size: 1.75rem;
+    line-height: 1.75rem;
+  }
+  article p {
+    line-height: 1.25rem;
+  }
+  .slider div {
+    margin-top: 1rem;
+    padding: 1.25rem 1.75rem;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+  }
+  footer > div:nth-child(2) h3 {
+    letter-spacing: 5px;
+  }
+  footer > div:nth-child(2) p {
+    line-height: 1.25rem;
+  }
+  .btn {
+    font-size: 1rem;
+  }
+  article > section > div {
+    width: 90%;
+  }
+}
+@media (max-width: 775px) {
+  main {
+    flex-direction: column;
+    min-height: 900px;
+  }
+  nav {
+    background-image: url(./images/desktop-image-hero-1.jpg);
+    width: 100%;
+    height: 1000px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+  article {
+    width: 100%;
+    position: relative;
+  }
+  article h2 {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+  article p {
+    font-size: 1.25rem;
+  }
+  article > section > div {
+    width: 90%;
+  }
+  article section {
+    padding: 2rem;
+    margin: 2.5rem 0;
+  }
+  .slider {
+    display: flex;
+    align-self: flex-end;
+    position: absolute;
+    top: -100px;
+  }
+  .slider div {
+    padding: 1.75rem 2.25rem;
+  }
+
+  footer {
+    flex-direction: column;
+  }
+  footer > div:nth-child(1),
+  footer > div:nth-child(3) {
+    width: 100%;
+    min-height: 500px;
+
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+  footer > div:nth-child(2) {
+    width: 100%;
+    padding: 0;
+    margin: 2rem 0;
+  }
+  footer > div:nth-child(2) p {
+    padding: 0 2rem;
+  }
+  footer > div:nth-child(2) h3 {
+    margin-bottom: 1.25rem;
+    text-align: center;
+    font-size: 1.25rem;
+  }
+}
+@media (max-width: 500px) {
+  main {
+    min-height: 750px;
+  }
+  nav ul {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    align-items: center;
+    justify-content: left;
+    transform: translateY(-100%);
+    margin: 0;
+    padding: 2.75rem 0;
+    z-index: 2;
+  }
+  nav ul.open {
+    transform: translateY(0);
+  }
+  nav ul li {
+    color: black;
+    padding: 0 0.75rem;
+    font-weight: 600;
+  }
+  ul li:nth-child(1) {
+    margin: 0 2.25rem 0 1rem;
+  }
+  nav {
+    height: 400px;
+  }
+  .menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  h1 {
+    font-weight: 400;
+    color: white;
+  }
+  .overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+
+  article section {
+    margin: 1.5rem 0;
+  }
+  .slider {
+    top: -84px;
+  }
+  .slider div {
+    padding: 1.25rem 2rem;
+  }
+
+  footer > div:nth-child(1),
+  footer > div:nth-child(3) {
+    min-height: 300px;
+  }
+}
+@media (max-width: 375px) {
+  main {
+    min-height: 625px;
+  }
+
+  .menu {
+    margin: 1.25rem;
+  }
+  nav ul li {
+    font-size: 1rem;
+    padding: 0 0.5rem;
+    margin-top: 1rem;
+  }
+  ul li:nth-child(1) {
+    margin: 1rem 1rem 0 1rem;
+  }
+  nav ul {
+    flex-wrap: wrap;
+  }
+
+  article h2 {
+    font-size: 2rem;
+  }
+  article p {
+    font-size: 1rem;
+  }
+  article > section > div {
+    width: 100%;
+  }
+  article section {
+    padding: 1.25rem 1.5rem;
+    margin: 1rem 0;
+  }
+  .slider {
+    top: -77px;
+  }
+  .slider div {
+    padding: 1rem 1.5rem;
+  }
+
+  footer > div:nth-child(1),
+  footer > div:nth-child(3) {
+    min-height: 240px;
+  }
+  footer > div:nth-child(2) {
+    width: 100%;
+  }
+  footer > div:nth-child(2) p {
+    padding: 0 1rem;
+  }
+  footer > div:nth-child(2) h3 {
+    text-align: left;
+    padding: 0 1rem;
+    font-size: 1rem;
+    font-weight: 700;
+  }
+}
